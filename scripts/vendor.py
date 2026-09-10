@@ -9,6 +9,8 @@ import shutil
 p = argparse.ArgumentParser()
 p.add_argument("upstream", type=Path, help="local neutral-instruments checkout")
 p.add_argument("product", type=Path, help="product repository root")
+p.add_argument("--target", default="vendor/neutral-instruments",
+               help="snapshot path relative to the product root")
 p.add_argument("--update", action="store_true", help="copy after verification; never implicit")
 args = p.parse_args()
 source = args.upstream / "dist"
@@ -17,7 +19,7 @@ for relative, expected in manifest["files"].items():
     actual = hashlib.sha256((source / relative).read_bytes()).hexdigest()
     if actual != expected:
         raise SystemExit(f"upstream build does not match its manifest: {relative}")
-target = args.product / "vendor" / "neutral-instruments"
+target = args.product / args.target
 drift = []
 for relative, expected in manifest["files"].items():
     path = target / relative
