@@ -18,5 +18,11 @@ See [docs/public-pages.md](docs/public-pages.md) and run
 `python scripts/verify.py dist/neutral-instruments.manifest.json` to verify a
 snapshot.
 
+Current adopters: [Weatherwatch](https://weatherwatch.neutral.zone/),
+[Labelwatch](https://labelwatch.neutral.zone/), and
+[atproto-acl](https://atproto-acl.neutral.zone/). Each product vendors its own
+copy and links back to its product source; this repository is provenance, not a
+runtime dependency.
+
 Licensed under MIT, except bundled fonts, which retain their upstream licenses.
 See `THIRD_PARTY_NOTICES.md`.
