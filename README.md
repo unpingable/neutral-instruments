@@ -18,6 +18,10 @@ See [docs/public-pages.md](docs/public-pages.md) and run
 `python scripts/verify.py dist/neutral-instruments.manifest.json` to verify a
 snapshot.
 
+Static social cards use the source-only composition contract in
+[docs/social-cards.md](docs/social-cards.md). It is design guidance and build
+provenance, not part of the vendored runtime snapshot.
+
 Current adopters: [Weatherwatch](https://weatherwatch.neutral.zone/),
 [Labelwatch](https://labelwatch.neutral.zone/), and
 [atproto-acl](https://atproto-acl.neutral.zone/). Each product vendors its own
